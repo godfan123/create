@@ -13,17 +13,16 @@ import thunk from 'redux-thunk';
 const store=createStore(reducers,compose(
     applyMiddleware(thunk)
 ));
-  console.log(store.getState());
+console.log(store.getState());
     ReactDom.render(
         <Provider store={store}>
             <Router>
             {/* Switch只渲染命中的第一个route */}
-            <Switch>
+             <Switch>
                 <Route path="/login" exact component={Auth}></Route>
                 <Route path="/dashboard" component={Dashboard}></Route>
                 <Redirect to="/dashboard" />   {/* 全部没命中 调到dashboard */}
-            </Switch>
-
+              </Switch>
             </Router>
 
         </Provider>,
