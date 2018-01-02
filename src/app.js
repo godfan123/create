@@ -2,14 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addGun,removeGun,addGunAsync} from '../redux/index.redux';
 const mapStatetoProps=(state)=>{
-    return {num: state}
+    return {num: state.counter}
 };
 
 const actionCreators={addGun,removeGun,addGunAsync};
 @connect(mapStatetoProps,actionCreators)
+
 class App extends React.Component{
         render(){
-        return (
+          return (
         <div>
             <h1>现在数{this.props.num}</h1>
             <button onClick={this.props.addGun}>增加</button>
