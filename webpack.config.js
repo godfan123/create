@@ -23,6 +23,7 @@ module.exports = {
                 'presets': ['react','es2015'],
                 plugins: [
                     'transform-runtime',
+                    'transform-decorators-legacy',
                     ['import', {"libraryName": "antd", "style": "css"}]
                 ]
             }
