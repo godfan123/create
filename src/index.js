@@ -9,26 +9,24 @@ import Auth from './auth';
 import Dashboard from './dashboard';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
-
-const store=createStore(reducers,compose(
-    applyMiddleware(thunk)
-));
-
+ const store=createStore(reducers,compose(
+        applyMiddleware(thunk),
+     window.devToolsExtension?window.devToolsExtension():f=>f
+ ));
 console.log(store.getState());
 
     ReactDom.render(
-        <Provider store={store}>
+         <Provider store={store} >
             <Router>
             {/* Switch只渲染命中的第一个route */}
              <Switch>
                 <Route path="/login" exact component={Auth}></Route>
                 <Route path="/dashboard" component={Dashboard}></Route>
-
                 <Redirect to="/dashboard" />   {/* 全部没命中 调到dashboard */}
               </Switch>
             </Router>
 
-        </Provider>,
+         </Provider>,
 
         document.getElementById('mainContainer')
     );
