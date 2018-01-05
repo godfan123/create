@@ -24,7 +24,7 @@ module.exports = {
                 plugins: [
                     'transform-runtime',
                     'transform-decorators-legacy',
-                    ['import', {"libraryName": "antd", "style": "css"}]
+                    ['import', {"libraryName": "antd-mobile", "style": "css"}]
                 ]
             }
         }, {
