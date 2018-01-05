@@ -5,6 +5,7 @@
   "main": "",
   "dependencies": {
     "antd": "^3.0.1",
+    "antd-mobile": "^2.1.3",
     "autoprefixer": "^7.2.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -14,6 +15,7 @@
     "babel-preset-stage-1": "^6.24.1",
     "babelify": "^8.0.0",
     "css-loader": "^0.28.7",
+    "express": "^4.16.2",
     "fetch": "^1.1.0",
     "html-webpack-plugin": "^2.30.1",
     "mobx": "^3.4.1",
@@ -46,14 +48,14 @@
     "less": "^2.7.3",
     "webpack": "^3.10.0"
   },
-  "babel":{
-
-      "plugins":["transform-decorators-legacy"]
-
+  "babel": {
+    "plugins": [
+      "transform-decorators-legacy"
+    ]
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --inline --port 1008"
+    "dev": "webpack-dev-server --hot --inline --port 990"
   },
   "author": "",
   "license": "ISC"
