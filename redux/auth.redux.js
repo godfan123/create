@@ -14,7 +14,7 @@ export function auth(state={isAuth:false,user:'zs'},action){
         }
 }
 
-/* action create */
+/* action create 生成action函数 */
 export function login(){
    return {type:LOGIN}
 }
