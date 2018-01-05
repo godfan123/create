@@ -1,21 +1,25 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addGun,removeGun,addGunAsync} from '../redux/index.redux';
+import {add,remove,removeTime} from '../redux/index.redux';
+import {Button} from 'antd-mobile';
 const mapStatetoProps=(state)=>{
+    console.log(state.auth);
     return {num: state.counter}
 };
 
-const actionCreators={addGun,removeGun,addGunAsync};
-@connect(mapStatetoProps,actionCreators)
+const actionCreators={add,remove,removeTime};
+@connect(state=>({num:state.counter}),actionCreators)
 
 class App extends React.Component{
         render(){
-          return (
+            return (
         <div>
             <h1>现在数{this.props.num}</h1>
-            <button onClick={this.props.addGun}>增加</button>
-            <button onClick={this.props.removeGun}>减少</button>
-            <button onClick={this.props.addGunAsync}>过2秒加</button>
+            {/* add已经自动有了dispatch的功能 */}
+            <button onClick={this.props.add}>增加</button>
+            <button onClick={this.props.remove}>减少</button>
+            <button onClick={this.props.removeTime}>过2s加</button>
+            <Button type="primary">click</Button>
         </div>
         )
     }
